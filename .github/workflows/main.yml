@@ -1,5 +1,5 @@
-name: Example workflow for Node using Snyk
-on: pull-request
+name: Snyk Security Scan (Node)
+on: pull_request
 jobs:
   security:
     runs-on: ubuntu-latest
