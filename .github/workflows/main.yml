@@ -1,4 +1,4 @@
-name: Snyk Security Scan (Node)
+name: Snyk Security Scan
 on: pull_request
 jobs:
   security:
