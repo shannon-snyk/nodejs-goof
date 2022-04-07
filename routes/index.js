@@ -19,6 +19,18 @@ var fs = require('fs');
 // prototype-pollution
 var _ = require('lodash');
 
+//vuln code from juice-shop
+const models = require('../models/index')
+const utils = require('../lib/utils')
+const fs = require('fs')
+const models = require('../models/index')
+const utils = require('../lib/utils')
+const insecurity = require('../lib/insecurity')
+const challenges = require('../data/datacache').challenges
+const pug = require('pug')
+const config = require('config')
+const themes = require('../views/themes/themes').themes
+
 exports.index = function (req, res, next) {
   Todo.
     find({}).
