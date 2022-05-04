@@ -7,7 +7,7 @@ jobs:
       - name: install AWS CDK cli
         run: npm install -g aws-cdk 
       - name: run build
-        run: sudo npm run build
+        run: npm run build --if-present
       - name: convert cdk template to json
         run: cdk synth --json 
       - name: change directories to cdk.out
