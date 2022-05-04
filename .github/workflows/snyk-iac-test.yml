@@ -6,13 +6,11 @@ jobs:
     steps: 
       - uses: actions/checkout@v3
       - name: switch to directory
-        run: cd ec2-instance
-      - name: install AWS CDK cli
-        run: npm install -g aws-cdk 
-      - name: npm install
-        run: npm install
-      - name: convert cdk template to a json file
-        run: cdk synth
+        run: |
+          cd ec2-instance
+          npm install -g aws-cdk
+          npm install
+          cdk synth
       - name: Run IaC test for issues
         uses: snyk/actions/iac@master
         env:
