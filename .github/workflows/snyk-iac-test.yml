@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v3
+      - name: switch to directory
+        run: cd ec2-instance
       - name: install AWS CDK cli
         run: npm install -g aws-cdk 
       - name: convert cdk template to a json file
