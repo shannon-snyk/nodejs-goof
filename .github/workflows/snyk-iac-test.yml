@@ -7,7 +7,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: install AWS CDK cli
         run: npm install -g aws-cdk 
-      - name: convert cdk template to json
+      - name: convert cdk template to a json file
         run: cdk synth --json 
       - name: Run IaC test for issues
         uses: snyk/actions/iac@master
