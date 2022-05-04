@@ -8,7 +8,7 @@ jobs:
       - name: install AWS CDK cli
         run: npm install -g aws-cdk 
       - name: convert cdk template to a json file
-        run: cdk synth --json 
+        run: cdk synth 
       - name: Run IaC test for issues
         uses: snyk/actions/iac@master
         env:
