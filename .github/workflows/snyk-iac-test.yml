@@ -9,6 +9,8 @@ jobs:
         run: cd ec2-instance
       - name: install AWS CDK cli
         run: npm install -g aws-cdk 
+      - name: run build
+        run: npm run build
       - name: convert cdk template to a json file
         run: cdk synth --app "node ./ec2-instance/bin/ec2-cdk.js"
       - name: Run IaC test for issues
