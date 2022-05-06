@@ -12,4 +12,12 @@ ignore:
         reason: testing cli to github to ui ignore
         expires: 2023-01-01T00:00:00.000Z
         created: 2022-05-05T18:49:18.406Z
+  SNYK-JS-MQUERY-1089718:
+    - '*':
+        reason: testing ide ignore
+        expires: 2023-01-01T00:00:00.000Z
+  SNYK-JS-MONGODB-473855:
+    - '*':
+        reason: testing ide ignore
+        expires: 2023-01-01T00:00:00.000Z
 patch: {}
