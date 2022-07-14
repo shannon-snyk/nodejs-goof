@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: snyk/actions/setup@master
-      - name: Snyk Test
+      - name: Snyk Code Test
         run: snyk code test --org=${{ secrets.SNYK_ORG }} --sarif > snyk-sarif2.json
         continue-on-error: true
         env:
