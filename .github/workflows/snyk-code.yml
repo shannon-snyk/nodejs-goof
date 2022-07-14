@@ -15,10 +15,10 @@ jobs:
     # Install & prepare Snyk
     - name: install Snyk
       run: npm install -g snyk
-    - name: snyk auth
-      run: snyk auth
-      env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      
+    - name: authenticate to Snyk
+      run: snyk auth ${{ secrets.SNYK_TOKEN }}
+
     
     - name: Snyk Code Scanning
       run: snyk code test --sarif-file-output=snyk-code.sarif
