@@ -1,11 +1,11 @@
 name: "snyk code test"
-on: [push, pull_request]
+on: [pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     - name: Use Node.js for installing Snyk 
       uses: actions/setup-node@v2
@@ -23,6 +23,7 @@ jobs:
     - name: Snyk Code Scanning
       run: snyk code test --sarif-file-output=snyk-code.sarif
       continue-on-error: true
+      
     - name: Upload results to GitHub Code Scanning
       uses: github/codeql-action/upload-sarif@v2
       with:
