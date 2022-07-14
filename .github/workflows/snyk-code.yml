@@ -13,15 +13,17 @@ jobs:
         node-version: 18.4
 
     # Install & prepare Snyk
-    - run: npm install -g snyk
+    - name: install Snyk
+      run: npm install -g snyk
+    - name: snyk auth
+      run: snyk auth
+      env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
     
-    - run: snyk auth
-      
-
     - name: Snyk Code Scanning
-      run: snyk code test --org=${{ secrets.SNYK_ORG }} --sarif-file-output=snyk-code.sarif
+      run: snyk code test --sarif-file-output=snyk-code.sarif
       continue-on-error: true
     - name: Upload results to GitHub Code Scanning
-      uses: github/codeql-action/upload-sarif@v1
+      uses: github/codeql-action/upload-sarif@v2
       with:
         sarif_file: snyk-code.sarif
