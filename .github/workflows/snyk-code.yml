@@ -1,5 +1,5 @@
 name: "snyk code test"
-on: [pull_request]
+on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -7,7 +7,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: snyk/actions/setup@master
       - name: Snyk Test
-        run: snyk code test --sarif > snyk-sarif
+        run: snyk code test --sarif > snyk-sarif.sjon
         continue-on-error: true
         env:
            SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
@@ -15,4 +15,4 @@ jobs:
       - name: Upload SARIF file to CodeQL
         uses: github/codeql-action/upload-sarif@v2
         with:
-          sarif_file: snyk-sarif
+          sarif_file: snyk-sarif.json
