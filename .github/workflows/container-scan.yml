@@ -18,17 +18,17 @@ jobs:
         
     - name: API Call
       env:
-        API_TOKEN = ${{secrets.API_TOKEN }}
-        INTERGATION_ID = ${{secrets.INTERGRATION_ID }}
-        ORG_ID = ${{secrets.ORG_ID }}
+        API_TOKEN = ${ {secrets.API_TOKEN }}
+        INTERGATION_ID = ${{ secrets.INTERGRATION_ID }}
+        ORG_ID = ${{ secrets.ORG_ID }}
       run: | 
         curl --include \
         --request POST \
         --header "Content-Type: application/json; charset=utf-8" \
-        --header "Authorization: '${API_TOKEN}' " \
+        --header "Authorization: ${API_TOKEN} " \
         --data-binary "{
         \"target\": {
         \"name\": \"shannreid/docker-goof:latest\"
           }
         }" \
-        'https://api.snyk.io/api/v1/org/'${ORG_ID}/integrations/'${INTEGRATION_ID}'/import'
+        'https://api.snyk.io/api/v1/org/${ORG_ID}/integrations/${INTEGRATION_ID}/import'
