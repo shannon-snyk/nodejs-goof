@@ -27,8 +27,8 @@ jobs:
         \"name\": \"shannreid/docker-goof:latest\"
           }
         }" \
-        'https://api.snyk.io/api/v1/org/orgId/integrations/integrationId/import'
+        'https://api.snyk.io/api/v1/org/${ORG_ID}/integrations/${INTEGRATION_ID}/import'
       env:
         API_TOKEN: ${{ secrets.API_TOKEN }}
-        integrationId: ${{ secrets.INTEGRATION_ID }}
-        orgId: ${{ secrets.ORG_ID }}
+        INTEGRATION_ID: ${{ secrets.INTEGRATION_ID }}
+        ORG_ID: ${{ secrets.ORG_ID }}
