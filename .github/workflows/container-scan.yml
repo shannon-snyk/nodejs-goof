@@ -19,7 +19,7 @@ jobs:
     - name: API Call
       env:
         API_TOKEN = ${{ secrets.API_TOKEN }}
-        INTERGATION_ID = ${{ secrets.INTERGRATION_ID }}
+        INTERGATION_ID = ${{ secrets.INTEGRATION_ID }}
         ORG_ID = ${{ secrets.ORG_ID }}
       run: | 
         curl --include \
