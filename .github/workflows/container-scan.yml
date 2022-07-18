@@ -29,6 +29,6 @@ jobs:
         }" \
         'https://api.snyk.io/api/v1/org/${ORG_ID}/integrations/${INTEGRATION_ID}/import'
       env:
-        INTEGRATION_ID: ${{ secrets.INTEGRATION_ID }}
+        INTEGRATION_ID: '${{ secrets.INTEGRATION_ID }}'
         API_TOKEN: ${{ secrets.API_TOKEN }}
         ORG_ID: ${{ secrets.ORG_ID }}
