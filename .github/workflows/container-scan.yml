@@ -17,11 +17,6 @@ jobs:
         args: --file=Dockerfile
         
     - name: Snyk Import API
-      continue-on-error: true
-      env:
-        API_TOKEN: ${{ secrets.API_TOKEN }}
-        INTEGRATION_ID: ${{ secrets.INTEGRATION_ID }}
-        ORG_ID: ${{ secrets.ORG_ID }}
       run: | 
         curl --include \
         --request POST \
@@ -33,3 +28,7 @@ jobs:
           }
         }" \
         'https://api.snyk.io/api/v1/org/${ORG_ID}/integrations/${INTEGRATION_ID}/import'
+      env:
+        API_TOKEN: ${{ secrets.API_TOKEN }}
+        INTEGRATION_ID: ${{ secrets.INTEGRATION_ID }}
+        ORG_ID: ${{ secrets.ORG_ID }}
