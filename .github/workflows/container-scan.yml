@@ -20,7 +20,7 @@ jobs:
       continue-on-error: true
       env:
         API_TOKEN: ${{ secrets.API_TOKEN }}
-        INTEGATION_ID: ${{ secrets.INTEGRATION_ID }}
+        INTEGRATION_ID: ${{ secrets.INTEGRATION_ID }}
         ORG_ID: ${{ secrets.ORG_ID }}
       run: | 
         curl --include \
