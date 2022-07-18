@@ -16,7 +16,7 @@ jobs:
         image: docker-goof
         args: --file=Dockerfile
         
-    - name: API Call
+    - name: Snyk Import API
       continue-on-error: true
       env:
         API_TOKEN: ${{ secrets.API_TOKEN }}
