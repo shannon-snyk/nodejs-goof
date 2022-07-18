@@ -9,11 +9,13 @@ jobs:
       run: docker build -t docker-goof .
     - name: Run Snyk to check Docker image for vulnerabilities
       uses: snyk/actions/docker@master
+      continue-on-error: true
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
         image: docker-goof
         args: --file=Dockerfile
+        
     - name: API Call
       run: | 
         curl --include \
