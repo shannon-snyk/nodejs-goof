@@ -11,11 +11,12 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
           
-      - name: snyk to html
-        run: |
-          npm install snyk --location=global
-          npm install snyk-to-html --location=global
-          snyk test --json > results.json
+      - name: install snyk
+        run: npm install -g snyk
+      - name: install snyk-to-html
+        run: npm install -g snyk-to-html
+      - name: run snyk test to html
+        run: snyk test --json > results.json
 
 
 
