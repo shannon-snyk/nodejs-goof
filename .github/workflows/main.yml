@@ -18,8 +18,6 @@ jobs:
           npm install snyk-to-html --location=global
           snyk test --json | snyk-to-html -o results.html || true
         continue-on-error: true
-      - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@v2
       - name: Archive Snyk Code Coverage Results
         uses: actions/upload-artifact@v2
         with:
