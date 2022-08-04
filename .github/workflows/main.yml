@@ -14,6 +14,7 @@ jobs:
       - name: snyk to html
         run: |
           npm install snyk
+          npm install snyk-to-html
           snyk test --json | snyk-to-html -o results.html
 
 
