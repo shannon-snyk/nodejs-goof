@@ -13,8 +13,8 @@ jobs:
           
       - name: snyk to html
         run: |
-          npm install snyk -g
-          npm install snyk-to-html -g
+          npm install snyk --location=global
+          npm install snyk-to-html --location=global
           snyk test --json > results.json
 
 
