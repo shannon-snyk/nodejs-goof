@@ -23,7 +23,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Archive Snyk Code Scan Results
-          path: results_sca.html
+          path: results.html
 
 
 
