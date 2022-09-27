@@ -1,7 +1,6 @@
 version: 2.1
 orbs: 
   snyk: snyk/snyk@1.1.2
-  circleci: circleci/python@2.1.1
 jobs:
   snyk-to-html:
     docker:
