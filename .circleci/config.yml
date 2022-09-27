@@ -10,8 +10,9 @@ jobs:
       - run:
           name: snyk to html
           command: |            
-            sudo npm install snyk
-            sudo npm install snyk-to-html
+            npm install --location=global snyk
+            npm install --location=global snyk-to-html
+            snyk auth
             snyk test --json | snyk-to-html -o results.html
       - store_artifacts:
             path: /project/html
@@ -28,7 +29,6 @@ jobs:
           fail-on-issues: false
           monitor-on-build: false
           severity-threshold: low
-          additional-arguments: '--file=package-lock.json'
 workflows:
   test:
     jobs:
