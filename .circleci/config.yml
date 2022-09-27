@@ -27,7 +27,8 @@ jobs:
           command: test
           fail-on-issues: false
           monitor-on-build: false
-          severity-threshold: medium
+          severity-threshold: low
+          additonal-arguments: --file=package-lock.json
 workflows:
   test:
     jobs:
