@@ -11,6 +11,8 @@ jobs:
         env:
            SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         continue-on-error: true
+        with:
+          command: monitor
       - name: Install Snyk + Snyk Delta + Snyk Delta Test
         run: |
           npm install --location=global snyk
