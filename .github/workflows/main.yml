@@ -16,4 +16,5 @@ jobs:
           npm install --location=global snyk
           npm install --location=global snyk-delta
           snyk test --json --print-deps | snyk-delta --baselineOrg --orgID 6e5f5718-4f6d-46dc-a71d-1c6832367c1d --baselineProject d0baf13b-6f05-4abf-a3da-5cedabcc03a4
-     
+        env:
+           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
