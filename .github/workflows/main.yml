@@ -1,0 +1,17 @@
+
+name: "snyk test"
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install snyk delta
+        run: npm install --location=global snyk-delta
+      - uses: snyk/actions/setup@master
+      - name: Snyk Test
+        run: snyk test --json --print-deps | snyk-delta
+        continue-on-error: true
+        env:
+           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+     
